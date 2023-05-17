@@ -1,21 +1,27 @@
+import {useMatches} from '@remix-run/react';
+
 export function Layout({children, title}) {
   return (
-    <div className="flex flex-col min-h-screen antialiased bg-neutral-50">
-      <header
-        role="banner"
-        className={`flex items-center h-16 p-6 md:p-8 lg:p-12 sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 antialiased transition shadow-sm`}
-      >
-        <div className="flex gap-12">
-          <a className="font-bold" href="/">
+    <div style={{ margin: '0px 10px 0px 10px' }} >
+      <div style = {{backgroundColor: 'black', height: '60px', padding: '5px'}} >
+        <div >
+          <a href="/" style = {{fontSize: '35px', textDecoration: 'none', color: 'white'}}>
             {title}
           </a>
         </div>
-      </header>
+        <div style={{float: 'right',marginTop: '-40px'}}>
+          <span>
+            <a className="font-bold" href="/" style = {{fontSize: '20px', textDecoration: 'none', color: 'white'}}>
+              Home
+            </a>
+          </span>
+        </div>
+      </div>
+        <br/>
 
       <main
-        role="main"
         id="mainContent"
-        className="flex-grow p-6 md:p-8 lg:p-12"
+        style = {{fontSize: '20px', padding: '5px'}}
       >
         {children}
       </main>

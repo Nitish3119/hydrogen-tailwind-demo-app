@@ -9,6 +9,7 @@ import {
 import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import {Layout} from './components/Layout';
+import {Seo} from '@shopify/hydrogen';
 
 
 export const links = () => {
@@ -39,7 +40,7 @@ export async function loader({context}) {
 export default function App() {
   const data = useLoaderData();
 
-  const {name} = data.layout.shop;
+  const name = 'Hydrogen App';
 
   return (
     <html lang="en">
@@ -47,7 +48,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body style = {{margin: '0', padding: '0'}}>
         <Layout title={name}>
           <Outlet />
         </Layout>

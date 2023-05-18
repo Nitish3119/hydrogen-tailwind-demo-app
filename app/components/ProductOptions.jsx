@@ -57,14 +57,11 @@ export default function ProductOptions({options, selectedVariant}) {
                 linkParams.set(option.name, value);
                 return (
                   <Link
+                    className = 'varientLink'
                     key={value}
                     to={`${pathname}?${linkParams.toString()}`}
                     preventScrollReset
                     replace
-                    className={`leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200 ${
-                      isSelected ? 'border-gray-500' : 'border-neutral-50'
-                    }`}
-                    style = {{marginLeft: '10px', padding: '1px', display: 'inline-flex'}}
                   >
                     {value}
                   </Link>

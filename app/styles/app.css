@@ -44,3 +44,125 @@ p {
   clear: both;
 }
 
+.grid-container {
+  display: grid;
+  gap: 2px;
+  padding: 3px;
+}
+
+.grid-item {
+  padding: 2px;
+}
+
+.item1 {
+  background-color: #bdb3b336;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.item2 {
+  grid-column: 2 /span 2;
+  grid-row: 1;
+}
+
+.s {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.listing-section{
+  width: 25%;
+  float: left;
+  padding: 1%;
+  border-bottom: 0.01em solid #dddbdb;
+}
+
+.product {
+  float: left;
+  width: 100%;
+  border-radius: 2%;
+  margin: 1%;
+}
+
+.product:hover,.imgdesc:hover {
+  box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow:    1.5px 1.5px 2.5px 3px rgba(0, 0, 0, 0.4);
+}
+
+.image-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2% 2% 0 0;
+}
+
+.images {
+  height: 15em;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 2% 2% 0 0;
+  transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+.images:hover {
+  transform: scale(1.2);
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+.text-box {
+  width: 100%;
+  float: left;
+  border: 0.01em solid #dddbdb;
+  border-radius: 0 0 2% 2%;
+  padding: 0.5em;
+  height: 150px;
+}
+
+.headd {
+  float: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin: 0.2em auto;
+}
+
+.item, .price {
+  clear: left;
+  width: 100%;
+  text-align: center;
+}
+
+.price {
+  color: Grey;
+}
+
+.description {
+  float: left;
+  clear: left;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+  margin: 0.2em auto;
+}
+
+.varientLink{
+  margin-left: 10px;
+  padding: 3px;
+  display: inline-flex;
+  text-decoration: none;
+  color: black;
+}
+
+.varientLink:hover{
+  box-shadow: 0 0 0 2px #5db3cd;
+  border-radius: 5px;
+}

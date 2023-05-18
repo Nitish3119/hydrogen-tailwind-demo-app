@@ -7,36 +7,40 @@ export default function ProductCard({ product }) {
 
   return (
     <>
-      <div>
-        <div>
-          <Image
-            data={product.variants.nodes[0].image}
-            alt={product.title}
-            width = {300}
-            style = {{borderRadius: '5%'}}
-          />
-        </div>
-        <br />
-        <Link to={`/products/${product.handle}`} style={{ float: 'left', margin: '5px', color: '#206A60'}}>
-          <div style = {{maxWidth: '55%'}}>
-            <h3>
-              {product.title}
-              {isDiscounted && (
-                <label>
-                  (Sale)
-                </label>
-              )}
-            </h3>
-            <div>
-              <span>
+      <div className="listing-section s">
+        <Link to={`/products/${product.handle}`} style={{color: '#206A60'}}>
+          <div className="product s">
+            <div className="image-box s">
+              <div className="images">
+                <Image
+                  data={product.variants.nodes[0].image}
+                  alt={product.title}
+                  width = {280}
+                  style = {{borderRadius: '5%'}}
+                />
+              </div>
+            </div>
+            <div className="text-box s">
+              <h2 class=" headd item s">
+                {product.title}
+              </h2>
+              <h3 class=" headd price s">
                 <Money withoutTrailingZeros data={price} />
+              </h3>
+              <p class="description s">
                 {isDiscounted && (
-                  <Money
-                    withoutTrailingZeros
-                    data={compareAtPrice}
-                  />
+                  <label style = {{color: 'green'}}>
+                    Sale🎉🎉
+                  </label>
                 )}
-              </span>
+              </p>
+              <p class="description s">
+                {!isDiscounted && (
+                  <label style = {{color: 'green'}}>
+                    In Offer Soon🎉
+                  </label>
+                )}
+              </p>
             </div>
           </div>
         </Link>

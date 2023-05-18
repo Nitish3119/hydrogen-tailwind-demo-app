@@ -100,16 +100,20 @@ export default function Cart() {
 
   if (cart?.totalQuantity > 0)
     return (
-      <div>
-        <div style = {{width: '50%',height: 'auto'}} className="clearfix">
-          <CartLineItems linesObj={cart.lines} cart={cart}/>
+      <div className="grid-container">
+        <div className="grid-item item1">
+          <div className="clearfix">
+            <CartLineItems linesObj={cart.lines} cart={cart}/>
+          </div>
         </div>
-        <div style= {{backgroundColor: '#866d6d36',width: '47%',float: 'right',marginTop: '-49%',padding:'5px'}}>
+      <div className="grid-item item2">
+        <div style={{width:'80%',float: 'right',backgroundColor: '#bdb3b336',padding: '5px'}}>
           <CartSummary cost={cart.cost} />
           <CartActions checkoutUrl={cart.checkoutUrl} />
         </div>
       </div>
-    );
+    </div>
+   );
   return (
     <div className="flex flex-col space-y-7 justify-center items-center md:py-8 md:px-12 px-4 py-6 h-screen">
       <h2 className="whitespace-pre-wrap max-w-prose font-bold text-4xl">

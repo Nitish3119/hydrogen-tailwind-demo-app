@@ -471,23 +471,8 @@ video {
   --tw-backdrop-sepia:  ;
 }
 /* New component styles can go here */
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.right-0 {
-  right: 0px;
-}
-.top-0 {
-  top: 0px;
-}
 .top-\[6rem\] {
   top: 6rem;
-}
-.m-4 {
-  margin: 1rem;
 }
 .my-2 {
   margin-top: 0.5rem;
@@ -592,17 +577,11 @@ video {
 .justify-items-start {
   justify-items: start;
 }
-.gap-1 {
-  gap: 0.25rem;
-}
 .gap-2 {
   gap: 0.5rem;
 }
 .gap-4 {
   gap: 1rem;
-}
-.gap-6 {
-  gap: 1.5rem;
 }
 .gap-8 {
   gap: 2rem;
@@ -628,20 +607,11 @@ video {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
-.overflow-hidden {
-  overflow: hidden;
-}
 .overflow-x-scroll {
   overflow-x: scroll;
 }
-.text-ellipsis {
-  text-overflow: ellipsis;
-}
 .whitespace-normal {
   white-space: normal;
-}
-.whitespace-nowrap {
-  white-space: nowrap;
 }
 .whitespace-pre-wrap {
   white-space: pre-wrap;
@@ -728,9 +698,6 @@ video {
 .text-center {
   text-align: center;
 }
-.text-right {
-  text-align: right;
-}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -738,10 +705,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 .font-bold {
   font-weight: 700;
@@ -762,20 +725,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.line-through {
-  text-decoration-line: line-through;
-}
-.subpixel-antialiased {
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
 }
 .opacity-50 {
   opacity: 0.5;

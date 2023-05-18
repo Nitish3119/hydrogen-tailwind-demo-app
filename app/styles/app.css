@@ -97,7 +97,7 @@ p {
 }
 
 .images {
-  height: 15em;
+  height: 15.5em;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -121,7 +121,7 @@ p {
   border: 0.01em solid #dddbdb;
   border-radius: 0 0 2% 2%;
   padding: 0.5em;
-  height: 150px;
+  height: 152px;
 }
 
 .headd {

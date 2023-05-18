@@ -16,25 +16,25 @@ export default function ProductCard({ product }) {
                   data={product.variants.nodes[0].image}
                   alt={product.title}
                   width = {280}
-                  style = {{borderRadius: '5%'}}
+                  style = {{borderRadius: '5%',marginLeft: '31px',marginTop: '12px'}}
                 />
               </div>
             </div>
             <div className="text-box s">
-              <h2 class=" headd item s">
-                {product.title}
+              <h2 className=" headd item s" style={{minHeight: '60px'}}>
+                <b>{product.title}</b>
               </h2>
-              <h3 class=" headd price s">
+              <h3 className=" headd price s">
                 <Money withoutTrailingZeros data={price} />
               </h3>
-              <p class="description s">
+              <p className="description s">
                 {isDiscounted && (
                   <label style = {{color: 'green'}}>
                     Sale🎉🎉
                   </label>
                 )}
               </p>
-              <p class="description s">
+              <p className="description s" style = {{marginTop: '-5px'}}>
                 {!isDiscounted && (
                   <label style = {{color: 'green'}}>
                     In Offer Soon🎉

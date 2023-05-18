@@ -26,15 +26,15 @@ export default function Index() {
 
   return (
     <>
-      <section className="w-full gap-4">
-        <h2 className="whitespace-pre-wrap max-w-prose font-bold text-lead">
+      <section>
+        <h1>
           Collections
-        </h2>
+        </h1>
         {Object.entries(groupedCollections).map(([section, collectionsInSection]) => (
           <div key={section}>
             <h3 style = {{lineHeight: '2px'}}>{section}</h3>
             <hr style = {{width: '80px', border: 'solid black 1px', margin: '0', marginTop: '-3px'}}></hr>
-            <div className="grid-flow-row grid gap-2 gap-y-6 md:gap-4 lg:gap-6 grid-cols-1 false sm:grid-cols-3 false false">
+            <div>
               {collectionsInSection.map((collection) => {
                 // Render each collection here
                 return (

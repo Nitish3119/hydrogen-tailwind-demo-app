@@ -42,15 +42,15 @@ export default function Collection() {
   const {collection} = useLoaderData();
   return (
     <>
-      <header className="grid w-full gap-8 py-8 justify-items-start" style = {{color: 'black'}}>
-        <h1 className="text-4xl whitespace-pre-wrap font-bold inline-block">
+      <header style = {{color: 'black'}}>
+        <h1>
           {collection.title}
         </h1>
 
         {collection.description && (
-          <div className="flex items-baseline justify-between w-full">
+          <div>
             <div>
-              <p className="max-w-md whitespace-pre-wrap inherit text-copy inline-block">
+              <p>
                 {collection.description}
               </p>
             </div>

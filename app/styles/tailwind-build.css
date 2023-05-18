@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -391,6 +391,9 @@ video {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -438,6 +441,9 @@ video {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -493,35 +499,20 @@ video {
 .flex {
   display: flex;
 }
-.inline-flex {
-  display: inline-flex;
-}
 .grid {
   display: grid;
 }
 .hidden {
   display: none;
 }
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
 .h-10 {
   height: 2.5rem;
-}
-.h-full {
-  height: 100%;
 }
 .h-screen {
   height: 100vh;
 }
 .w-10 {
   width: 2.5rem;
-}
-.w-\[80vw\] {
-  width: 80vw;
-}
-.w-\[90vw\] {
-  width: 90vw;
 }
 .w-full {
   width: 100%;
@@ -538,17 +529,8 @@ video {
 .max-w-xl {
   max-width: 36rem;
 }
-.cursor-pointer {
-  cursor: pointer;
-}
-.snap-center {
-  scroll-snap-align: center;
-}
 .grid-flow-row {
   grid-auto-flow: row;
-}
-.grid-flow-col {
-  grid-auto-flow: column;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -607,17 +589,11 @@ video {
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
-.overflow-x-scroll {
-  overflow-x: scroll;
-}
 .whitespace-normal {
   white-space: normal;
 }
 .whitespace-pre-wrap {
   white-space: pre-wrap;
-}
-.rounded {
-  border-radius: 0.25rem;
 }
 .rounded-md {
   border-radius: 0.375rem;
@@ -628,27 +604,9 @@ video {
 .border {
   border-width: 1px;
 }
-.border-b-\[1\.5px\] {
-  border-bottom-width: 1.5px;
-}
-.border-t {
-  border-top-width: 1px;
-}
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-.border-gray-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
-.border-neutral-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(250 250 250 / var(--tw-border-opacity));
 }
 .bg-black {
   --tw-bg-opacity: 1;
@@ -657,10 +615,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .p-0 {
   padding: 0px;
@@ -676,10 +630,6 @@ video {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -691,9 +641,6 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-.pt-6 {
-  padding-top: 1.5rem;
 }
 .text-center {
   text-align: center;
@@ -732,16 +679,6 @@ video {
 .opacity-50 {
   opacity: 0.5;
 }
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 .outline {
   outline-style: solid;
 }
@@ -750,14 +687,6 @@ video {
 }
 .outline-blue-300 {
   outline-color: #93c5fd;
-}
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.duration-200 {
-  transition-duration: 200ms;
 }
 
 .last\:mb-0:last-child {
@@ -787,29 +716,13 @@ video {
     position: sticky;
   }
 
-  .md\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .md\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .md\:w-full {
-    width: 100%;
-  }
-
   .md\:max-w-\[24rem\] {
     max-width: 24rem;
-  }
-
-  .md\:grid-flow-row {
-    grid-auto-flow: row;
   }
 
   .md\:grid-cols-2 {
@@ -822,18 +735,6 @@ video {
 
   .md\:gap-8 {
     gap: 2rem;
-  }
-
-  .md\:overflow-x-auto {
-    overflow-x: auto;
-  }
-
-  .md\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-
-  .md\:p-0 {
-    padding: 0px;
   }
 
   .md\:p-6 {
@@ -865,10 +766,6 @@ video {
 
   .lg\:top-\[8rem\] {
     top: 8rem;
-  }
-
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
   }
 
   .lg\:grid-cols-3 {

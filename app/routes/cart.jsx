@@ -3,6 +3,9 @@ import {json} from '@shopify/remix-oxygen';
 import { CartLineItems } from '~/components/Cart';
 import { CART_QUERY } from '~/queries/cart';
 import {CartActions, CartSummary} from '~/components/Cart';
+import React, { useState, useEffect , useContext} from 'react';
+import ReactDOM from "react-dom/client";
+import {UserContext} from '../components/Layout'
 
 export async function loader({context}) {
   const cartId = await context.session.get('cartId');
@@ -97,6 +100,12 @@ export async function action({request, context}) {
 
 export default function Cart() {
   const {cart} = useLoaderData();
+  const {totalCartItem,setTotalCartItem} = useContext(UserContext);
+  // useEffect(() => {
+  //   const cartElement = document.getElementById('cartField');
+  //   cartElement.innerHTML = 'cart(' + cart.totalQuantity.toString() +')';
+
+  // },[cart.totalQuantity]);
 
   if (cart?.totalQuantity > 0)
     return (
@@ -115,20 +124,19 @@ export default function Cart() {
     </div>
    );
   return (
-    <div className="flex flex-col space-y-7 justify-center items-center md:py-8 md:px-12 px-4 py-6 h-screen">
-      <h2 className="whitespace-pre-wrap max-w-prose font-bold text-4xl">
+    <div>
+      <h2>
         Your cart is empty
       </h2>
-      <Link
-        to="/"
-        className="inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none bg-black text-white w-full"
-      >
+      <Link to="/" >
         Continue shopping
       </Link>
     </div>
   );
 }
 
+// const element = ReactDOM.createRoot(document.getElementById('cartField'));
+// element.innerHTML = 'cart(' + cart.totalQuantity.toString() +')';
 /**
  * Create a cart with line(s) mutation
  * @param input CartInput https://shopify.dev/api/storefront/{api_version}/input-objects/CartInput

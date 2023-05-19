@@ -3,6 +3,8 @@ import {Link, useFetcher} from '@remix-run/react';
 import {flattenConnection, Image, Money} from '@shopify/hydrogen-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import {UserContext} from './Layout'
+import { useContext} from 'react';
 
 
 export function CartLineItems({linesObj, cart}) {
@@ -18,7 +20,6 @@ export function CartLineItems({linesObj, cart}) {
 
 function LineItem({lineItem, cart}) {
   const {merchandise, quantity} = lineItem;
-
   return (
     <div>
       <div style = {{width: '20%', float: 'left', minHeight: '120px', padding: '5px'}}>
@@ -30,7 +31,7 @@ function LineItem({lineItem, cart}) {
         </Link>
         <div>{merchandise.title}</div>
         <div>Qty: {quantity}</div>
-        <ItemRemoveButton lineIds={[lineItem.id]} />
+        <ItemRemoveButton lineIds={[lineItem.id]} quantity={quantity}/>
       </div>
       <div style = {{width: '20%', float: 'left', minHeight: '120px', padding: '5px',marginLeft: '1%'}}>
         <Money data={lineItem.cost.totalAmount} />
@@ -39,21 +40,29 @@ function LineItem({lineItem, cart}) {
   );
 }
 
-function ItemRemoveButton({lineIds}) {
+function ItemRemoveButton({lineIds, quantity}) {
   const fetcher = useFetcher();
+  const {totalCartItem,setTotalCartItem} = useContext(UserContext);
+  const handleDelete = () => {
+    console.log(totalCartItem);
+    let updatedTotalCartItem = totalCartItem - quantity
+    setTotalCartItem(updatedTotalCartItem)
+    console.log(totalCartItem);
+    debugger;
+    fetcher.submitForm();
+  };
 
   return (
-    <fetcher.Form action="/cart" method="post">
+    <form onSubmit={handleDelete} method="post">
       <input type="hidden" name="cartAction" value="REMOVE_FROM_CART" />
       <input type="hidden" name="linesIds" value={JSON.stringify(lineIds)} />
       <button
-        className="bg-white border-black text-black hover:text-white hover:bg-black rounded-md font-small text-center my-2 max-w-xl leading-none border w-10 h-10 flex items-center justify-center"
         type="submit"
         style = {{backgroundColor: 'white'}}
       >
         <FontAwesomeIcon icon={faTrash} className="icn" />
       </button>
-    </fetcher.Form>
+    </form>
   );
 }
 

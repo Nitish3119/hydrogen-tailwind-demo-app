@@ -470,6 +470,39 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 /* New component styles can go here */
 .top-\[6rem\] {
   top: 6rem;
@@ -481,14 +514,8 @@ video {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
-.mb-4 {
-  margin-bottom: 1rem;
-}
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-.flex {
-  display: flex;
 }
 .grid {
   display: grid;
@@ -498,9 +525,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.min-w-\[4rem\] {
-  min-width: 4rem;
 }
 .max-w-prose {
   max-width: 65ch;
@@ -514,17 +538,8 @@ video {
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.flex-col {
-  flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
 .items-start {
   align-items: flex-start;
-}
-.items-baseline {
-  align-items: baseline;
 }
 .gap-2 {
   gap: 0.5rem;
@@ -534,9 +549,6 @@ video {
 }
 .gap-8 {
   gap: 2rem;
-}
-.gap-y-2 {
-  row-gap: 0.5rem;
 }
 .gap-y-6 {
   row-gap: 1.5rem;
@@ -601,10 +613,6 @@ video {
 }
 .outline-blue-300 {
   outline-color: #93c5fd;
-}
-
-.last\:mb-0:last-child {
-  margin-bottom: 0px;
 }
 
 @media (min-width: 640px) {

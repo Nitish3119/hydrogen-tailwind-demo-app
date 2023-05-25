@@ -3,6 +3,7 @@ import { Image, Money } from '@shopify/hydrogen';
 
 export default function ProductCard({ product }) {
   const { price, compareAtPrice } = product.variants?.nodes[0] || {};
+  const updatedPrice = {amount: `${price.amount}`, currencyCode: 'USD'};
   const isDiscounted = compareAtPrice?.amount > price?.amount;
 
   return (
@@ -21,11 +22,11 @@ export default function ProductCard({ product }) {
               </div>
             </div>
             <div className="text-box s" style = {{backgroundColor: '#282222',color: 'white'}}>
-              <h2 className=" headd item s" style={{minHeight: '60px'}}>
-                <b>{product.title}</b>
+              <h2 className=" headd item s" style={{minHeight: '50px'}}>
+                <b style = {{fontSize: '14px'}}>{product.title}</b>
               </h2>
               <h3 className=" headd price s" style = {{color: 'powderblue'}}>
-                <Money withoutTrailingZeros data={price}/>
+                <Money withoutTrailingZeros data={updatedPrice}/>
               </h3>
               <p className="description s">
                 {isDiscounted && (

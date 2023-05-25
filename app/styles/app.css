@@ -121,7 +121,7 @@ p {
   border: 0.01em solid #dddbdb;
   border-radius: 0 0 2% 2%;
   padding: 0.25em;
-  height: 160px;
+  height: 142px;
 }
 
 .headd {
@@ -160,6 +160,10 @@ p {
   display: inline-flex;
   text-decoration: none;
   color: black;
-  box-shadow: 0 0 0 2px #5db3cd;
+  border: solid 2px #346776;
   border-radius: 5px;
+}
+.varientLink:hover{
+  box-shadow: 0 0 0 2px #5db3cd;
+  text-shadow: 2px 2px #FF0000;
 }

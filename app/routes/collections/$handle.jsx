@@ -41,7 +41,7 @@ export const meta = ({data}) => {
 export default function Collection() {
   const {collection} = useLoaderData();
   return (
-    <>
+    <div>
       <header style = {{color: 'black'}}>
         <h1>
           {collection.title}
@@ -62,7 +62,7 @@ export default function Collection() {
         collection={collection}
         url={`/collections/${collection.handle}`}
       />
-    </>
+    </div>
   );
 }
 
@@ -73,13 +73,13 @@ const COLLECTION_QUERY = `#graphql
       title
       description
       handle
-      products(first: 4) {
+      products(first: 25) {
         nodes {
           id
           title
           publishedAt
           handle
-          variants(first: 1) {
+          variants(first: 5) {
             nodes {
               id
               image {

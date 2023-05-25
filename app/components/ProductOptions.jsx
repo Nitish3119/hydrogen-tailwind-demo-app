@@ -42,15 +42,12 @@ export default function ProductOptions({options, selectedVariant}) {
         // get the currently selected option value
         const currentOptionVal = searchParams.get(option.name);
         return (
-          <div
-            key={option.name}
-            className="flex flex-col flex-wrap mb-4 gap-y-2 last:mb-0"
-          >
-            <h3 className="whitespace-pre-wrap max-w-prose font-bold text-lead min-w-[4rem]">
+          <div key={option.name}>
+            <h3>
               {option.name}
             </h3>
 
-            <div className="flex flex-wrap items-baseline gap-4">
+            <div>
               {option.values.map((value) => {
                 const linkParams = new URLSearchParams(searchParams);
                 const isSelected = currentOptionVal === value;

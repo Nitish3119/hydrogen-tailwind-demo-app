@@ -7,25 +7,25 @@ export default function ProductCard({ product }) {
 
   return (
     <>
-      <div className="listing-section s">
-        <Link to={`/products/${product.handle}`} style={{color: '#206A60'}}>
-          <div className="product s">
+      <div className="listing-section s" style = {{backgroundColor: '#b19f9f'}}>
+        <Link to={`/products/${product.handle}`}>
+          <div className="product s" style = {{backgroundColor: 'white'}}>
             <div className="image-box s">
               <div className="images">
                 <Image
                   data={product.variants.nodes[0].image}
                   alt={product.title}
                   width = {280}
-                  style = {{borderRadius: '5%',marginLeft: '31px',marginTop: '12px'}}
+                  style = {{borderRadius: '5%',marginLeft: '33.5px',marginTop: '12px'}}
                 />
               </div>
             </div>
-            <div className="text-box s">
+            <div className="text-box s" style = {{backgroundColor: '#282222',color: 'white'}}>
               <h2 className=" headd item s" style={{minHeight: '60px'}}>
                 <b>{product.title}</b>
               </h2>
-              <h3 className=" headd price s">
-                <Money withoutTrailingZeros data={price} />
+              <h3 className=" headd price s" style = {{color: 'powderblue'}}>
+                <Money withoutTrailingZeros data={price}/>
               </h3>
               <p className="description s">
                 {isDiscounted && (

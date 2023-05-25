@@ -34,7 +34,7 @@ export default function Index() {
           <div key={section}>
             <h3 style = {{lineHeight: '2px'}}>{section}</h3>
             <hr style = {{width: '80px', border: 'solid black 1px', margin: '0', marginTop: '-3px'}}></hr>
-            <div>
+            <div style = {{width: '25%'}}>
               {collectionsInSection.map((collection) => {
                 // Render each collection here
                 return (
@@ -100,7 +100,7 @@ function getSection(title) {
 
 const COLLECTIONS_QUERY = `#graphql
   query FeaturedCollections {
-    collections(first: 6) {
+    collections(first: 20) {
       nodes {
         id
         title

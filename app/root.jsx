@@ -48,7 +48,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body style = {{margin: '0', padding: '0'}}>
+      <body style = {{margin: '0', padding: '0', backgroundColor: '#b19f9f'}}>
         <Layout title={name}>
           <Outlet />
         </Layout>

@@ -120,8 +120,8 @@ p {
   float: left;
   border: 0.01em solid #dddbdb;
   border-radius: 0 0 2% 2%;
-  padding: 0.5em;
-  height: 152px;
+  padding: 0.25em;
+  height: 160px;
 }
 
 .headd {
@@ -160,9 +160,6 @@ p {
   display: inline-flex;
   text-decoration: none;
   color: black;
-}
-
-.varientLink:hover{
   box-shadow: 0 0 0 2px #5db3cd;
   border-radius: 5px;
 }

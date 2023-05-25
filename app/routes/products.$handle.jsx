@@ -4,6 +4,8 @@ import {MediaFile, Money, ShopPayButton} from '@shopify/hydrogen-react';
 import ProductOptions from '~/components/ProductOptions';
 import {Layout} from '~/components/Layout';
 import {useMatches, useFetcher} from '@remix-run/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export async function loader({params, context, request}) {
   const {handle} = params;
@@ -61,8 +63,8 @@ function ProductForm({variantId}) {
         value={selectedLocale?.country ?? 'US'}
       />
       <input type="hidden" name="lines" value={JSON.stringify(lines)} />
-      <button style= {{backgroundColor: '#5a31f4', width: '400px',minHeight: '35px', marginTop: '5px',color: 'white'}}><b>
-        Add to Cart
+      <button style= {{backgroundColor: '#5a31f4', width: '400px',minHeight: '42px', marginTop: '5px',color: 'white',fontSize: '20px'}}><b>
+        Add to <FontAwesomeIcon icon={faShoppingCart} />
       </b></button>
     </fetcher.Form>
   );

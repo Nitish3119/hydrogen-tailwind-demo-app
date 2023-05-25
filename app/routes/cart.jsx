@@ -5,7 +5,6 @@ import { CART_QUERY } from '~/queries/cart';
 import {CartActions, CartSummary} from '~/components/Cart';
 import React, { useState, useEffect , useContext} from 'react';
 import ReactDOM from "react-dom/client";
-import {UserContext} from '../components/Layout'
 
 export async function loader({context}) {
   const cartId = await context.session.get('cartId');
@@ -100,7 +99,6 @@ export async function action({request, context}) {
 
 export default function Cart() {
   const {cart} = useLoaderData();
-  const {totalCartItem,setTotalCartItem} = useContext(UserContext);
   // useEffect(() => {
   //   const cartElement = document.getElementById('cartField');
   //   cartElement.innerHTML = 'cart(' + cart.totalQuantity.toString() +')';
@@ -116,7 +114,7 @@ export default function Cart() {
           </div>
         </div>
       <div className="grid-item item2">
-        <div style={{width:'80%',float: 'right',backgroundColor: '#bdb3b336',padding: '5px'}}>
+        <div style={{width:'85%',float: 'right',backgroundColor: '#bdb3b336',padding: '10px'}}>
           <CartSummary cost={cart.cost} />
           <CartActions checkoutUrl={cart.checkoutUrl} />
         </div>

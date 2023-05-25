@@ -3,9 +3,6 @@ import {Link, useFetcher} from '@remix-run/react';
 import {flattenConnection, Image, Money} from '@shopify/hydrogen-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import {UserContext} from './Layout'
-import { useContext} from 'react';
-
 
 export function CartLineItems({linesObj, cart}) {
   const lines = flattenConnection(linesObj);
@@ -40,20 +37,11 @@ function LineItem({lineItem, cart}) {
   );
 }
 
-function ItemRemoveButton({lineIds, quantity}) {
+function ItemRemoveButton({lineIds}) {
   const fetcher = useFetcher();
-  const {totalCartItem,setTotalCartItem} = useContext(UserContext);
-  const handleDelete = () => {
-    console.log(totalCartItem);
-    let updatedTotalCartItem = totalCartItem - quantity
-    setTotalCartItem(updatedTotalCartItem)
-    console.log(totalCartItem);
-    debugger;
-    fetcher.submitForm();
-  };
 
   return (
-    <form onSubmit={handleDelete} method="post">
+    <fetcher.Form action="/cart" method="post">
       <input type="hidden" name="cartAction" value="REMOVE_FROM_CART" />
       <input type="hidden" name="linesIds" value={JSON.stringify(lineIds)} />
       <button
@@ -62,7 +50,7 @@ function ItemRemoveButton({lineIds, quantity}) {
       >
         <FontAwesomeIcon icon={faTrash} className="icn" />
       </button>
-    </form>
+    </fetcher.Form>
   );
 }
 
@@ -81,7 +69,7 @@ export function CartSummary({cost}) {
       </div>
       <div style={{marginTop:'10px'}}>
         <div style={{float:'left',width:'50%'}}>Shipping estimate</div>
-        <div style={{textAlign:'right',color:'green',marginBottom:'20px'}}>Free and carbon neutral</div>
+        <div style={{textAlign:'right',color:'#33d333',marginBottom:'20px'}}>Free and carbon neutral</div>
       </div>
     </div>
   );
